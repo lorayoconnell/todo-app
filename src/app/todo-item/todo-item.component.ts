@@ -6,7 +6,7 @@ import { TodoItem } from './todo-item.model';
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.css']
 })
-export class TodoItemComponent implements OnInit {
+export class TodoItemComponent {
 
   @Input() todoItem: TodoItem;
 
