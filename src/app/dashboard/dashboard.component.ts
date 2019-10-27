@@ -1,18 +1,14 @@
-import { Component } from '@angular/core';
-import { TodoItem } from './todo-item/todo-item.model';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { Component, OnInit } from '@angular/core';
+import { TodoItem } from '../todo-item/todo-item.model';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
+export class DashboardComponent implements OnInit {
 
-export class AppComponent {
-
-  /*
   todoItems: TodoItem[];
-  // dashboardComponent: DashboardComponent;
 
   constructor() {
     this.todoItems = [
@@ -20,9 +16,7 @@ export class AppComponent {
       new TodoItem("Todo item #1", "The next day"),
     ];
   }
-
-  // should I assume the duedate is undefined unless specifically defined
-
+  
   addTodoItem(title: HTMLInputElement, duedate: HTMLInputElement): boolean {
     console.log('Adding new todo-item: ${title.value} and duedate: ${duedate.value}');
 
@@ -31,5 +25,8 @@ export class AppComponent {
     duedate.value = '';
     return false;
   }
-*/
+
+  ngOnInit() {
+  }
+
 }
