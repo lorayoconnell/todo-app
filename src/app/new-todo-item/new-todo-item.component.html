@@ -1,0 +1,18 @@
+<form>
+    <h3>Add a new todo item</h3>
+          
+     <div class="field">
+        <label for="title">Title</label>
+        <input name="title" id="title" #newtitle>
+    </div>
+          
+    <div class="field">
+        <label for="duedate">Duedate</label>
+        <input name="duedate" id="duedate" #newduedate>
+    </div>
+          
+    <button (click)="addTodoItem(newtitle, newduedate)">
+        Submit Todo item
+    </button>
+          
+</form>
