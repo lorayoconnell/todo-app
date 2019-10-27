@@ -7,6 +7,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
+import { TodoServiceService } from './todo-service.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TodoServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

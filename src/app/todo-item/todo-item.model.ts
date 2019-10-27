@@ -7,5 +7,4 @@ export class TodoItem {
         this.duedate = duedate;
     }
 
-
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TodoItem } from '../todo-item/todo-item.model';
 import { NewTodoItemComponent } from '../new-todo-item/new-todo-item.component';
 import { TodoListComponent } from '../todo-list/todo-list.component';
+// import { TodoServiceService } from '../todo-service.service';
 
 @Component({
   selector: 'dashboard',
@@ -16,6 +17,8 @@ export class DashboardComponent implements OnInit {
   todoList: TodoListComponent;
 
   constructor() { }
+
+  // constructor(public todoService: TodoServiceService) { }
 
   ngOnInit() { }
 
