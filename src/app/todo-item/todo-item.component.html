@@ -1,3 +1,15 @@
-<li class="item">
-    {{ todoItem.title }} - {{ todoItem.duedate }}
-</li>
+<div class="item">
+    <div class="content">
+        {{ todoItem.title }} - {{ todoItem.duedate }}
+    </div>
+    <!-- <div class="right floated content"> -->
+    <div class="">
+        <div class="ui three item menu">
+        <button class="item">Urgent</button>
+        <button class="item active">Days</button>
+        <button class="item">Weeks</button>
+        </div>
+        <button class="removeBtn" (click)="removeItem()">-</button>
+    </div>
+    <!-- </div> -->
+</div>

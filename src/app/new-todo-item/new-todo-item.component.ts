@@ -23,7 +23,7 @@ export class NewTodoItemComponent implements OnInit {
   ngOnInit() { }
 
   addTodoItem(title: HTMLInputElement, duedate: HTMLInputElement): boolean {
-    console.log('Adding new todo-item: ${title.value} and duedate: ${duedate.value}');
+    // console.log('Adding new todo-item: ${title.value} and duedate: ${duedate.value}');
 
 
     this.todoService.addItem(new TodoItem(title.value, duedate.value)); // push to service

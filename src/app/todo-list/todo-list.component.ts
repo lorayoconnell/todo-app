@@ -39,6 +39,8 @@ export class TodoListComponent implements OnInit {
   //  console.log("todoItems.length: " + this.todoItems.length);
   // }
 
+
+/*
   addTodoItem(title: HTMLInputElement, duedate: HTMLInputElement): boolean {
     console.log('Adding new todo-item: ${title.value} and duedate: ${duedate.value}');
 
@@ -47,7 +49,7 @@ export class TodoListComponent implements OnInit {
     duedate.value = '';
     return false;
   }
-
+*/
   
   ngOnInit() {
     //this.todoItems;

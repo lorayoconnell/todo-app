@@ -1,6 +1,9 @@
 
-<div class="">
-    <ul>
-        <todoItem *ngFor="let item of todoItems" [todoItem]="item"></todoItem>
-    </ul>
+<div class="itemList">
+    <todoItem *ngFor="let item of todoItems" [todoItem]="item"></todoItem>
 </div>
+
+
+<!--
+    <todoItem *ngFor="let item of todoItems let i = index" [todoItem]="item"></todoItem>
+-->

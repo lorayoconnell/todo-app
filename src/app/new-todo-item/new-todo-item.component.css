@@ -1,0 +1,16 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > div {
+    display: flex;
+}
+
+.btnGroup {
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+}

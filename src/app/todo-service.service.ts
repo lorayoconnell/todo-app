@@ -16,7 +16,7 @@ export class TodoServiceService {
   }
 
   addDummyItems() {
-    console.log("adding dummy items");
+    // console.log("adding dummy items");
     this.todoItems = [
       new TodoItem("Todo item #1", "Tomorrow"),
       new TodoItem("Todo item #1", "The next day"),
@@ -24,11 +24,17 @@ export class TodoServiceService {
   }
 
   addItem(item: TodoItem) {
-    console.log("TodoServiceService adding a new item: " + item.title);
+    // console.log("TodoServiceService adding a new item: " + item.title);
     this.todoItems.push(item);
     console.log("todoItems.length: " + this.todoItems.length);
+  }
 
-    //this.todoList.testFunction();
+  updateItem(item: TodoItem) {
+
+  }
+
+  deleteItem(item: TodoItem) {
+
   }
 
 

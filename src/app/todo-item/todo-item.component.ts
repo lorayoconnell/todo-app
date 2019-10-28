@@ -22,6 +22,10 @@ export class TodoItemComponent implements OnInit {
   //  this.getItems();
   }
 
+  removeItem() {
+    console.log("remove item btn pressed");
+  }
+
   // getItems(): void {
   //  this.todoServiceService.getItems();  // .subscribe.... from heroes.component.ts
   // }

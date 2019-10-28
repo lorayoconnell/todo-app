@@ -1,0 +1,35 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin:0.5em 0;
+    padding-left: 0.3em;
+    background-color: #fff;
+    box-shadow: 0 0 2px 1px rgba(30,30,30,0.1);
+}
+
+.item > div {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu > button {
+    height: 100%;
+}
+
+.item.content {
+    display: flex;
+
+}
+
+.removeBtn {
+    background-color: red;
+    color: #fff;
+    width:36px;
+    border-radius: 4px;
+}

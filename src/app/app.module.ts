@@ -8,6 +8,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
 import { TodoServiceService } from './todo-service.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import { RouterModule, Routes } from '@angular/router';
+
+//const appRoutes: Routes = [
+//  { path: 'somePath', component: DashboardComponent },
+//  { path: '**', component: PageNotFoundComponent }
+//];
 
 @NgModule({
   declarations: [
@@ -15,13 +23,22 @@ import { TodoServiceService } from './todo-service.service';
     TodoItemComponent,
     DashboardComponent,
     TodoListComponent,
-    NewTodoItemComponent
+    NewTodoItemComponent,
+    PageNotFoundComponent
   ],
   imports: [
+  //  RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule
   ],
   providers: [TodoServiceService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+
+
+
+
+
+
