@@ -1,5 +1,20 @@
 # TodoApp
 
+Loray O'Connell
+
+https://github.com/lorayoconnell/todo-app
+
+Created app with the following components:
+DashboardComponent, TodoItemComponent, TodoListComponent, NewTodoItemComponent, and PageNotFoundComponent
+and service: TodoService which contains the functionality for adding, updating, and removing list items.
+
+** Extra Credit: the todo item component has a button that when clicked will remove the item from the array
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
 ## Development server
