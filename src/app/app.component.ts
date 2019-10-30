@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { TodoItem } from './todo-item/todo-item.model';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 @Component({
   selector: 'app-root',

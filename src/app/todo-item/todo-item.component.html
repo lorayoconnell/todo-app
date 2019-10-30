@@ -1,15 +1,17 @@
-<div class="item">
-    <div class="content">
-        {{ todoItem.title }} - {{ todoItem.duedate }}
-    </div>
-    <!-- <div class="right floated content"> -->
-    <div class="">
-        <div class="ui three item menu">
-        <button class="item">Urgent</button>
-        <button class="item active">Days</button>
-        <button class="item">Weeks</button>
+<div class="ui form">
+    
+    <div class="fieldWrapper">
+
+        <input readonly type="text" value="{{todoItem.name}}">
+
+        <div class="btnField">
+            <div class="ui buttons">
+            <button class="ui button" [ngClass]="{'green' : todoItem.urgent == true}" (click)="updateItemDue('urgent')">Urgent</button>
+            <button class="ui button" [ngClass]="{'green' : todoItem.days == true}" (click)="updateItemDue('days')">Days</button>
+            <button class="ui button" [ngClass]="{'green' : todoItem.weeks == true}" (click)="updateItemDue('weeks')">Weeks</button>
+            </div>
+            <button class="removeBtn" (click)="removeItem()">-</button>
         </div>
-        <button class="removeBtn" (click)="removeItem()">-</button>
-    </div>
-    <!-- </div> -->
+
+    </div> 
 </div>

@@ -1,0 +1,13 @@
+h2 {
+    margin-top: 0.5em;
+}
+
+.btnContainer {
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    right: 0;
+}

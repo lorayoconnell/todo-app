@@ -1,24 +1,7 @@
 @import './app/vendor/semantic.min.css';
 
-body {
-  font-size: 18px;
-  line-height:32px;
-	max-width: 920px;
-  margin: 1em auto;
-  background-color: #eee;
-}
 
-form {
-  border: 1px solid #999;
-}
 
-.itemList {
-/*
-  border-left: 2px solid #eee;
-  border-right: 2px solid #eee;
-  padding: 0 0.8em;
-*/  
-}
 
 /*
 .ui.menu .item img.logo {

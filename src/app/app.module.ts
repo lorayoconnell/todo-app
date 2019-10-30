@@ -7,10 +7,23 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
-import { TodoServiceService } from './todo-service.service';
+import { TodoService } from './todo.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
+import { Component } from '@angular/core';
+// import { Observable } from 'rxjs';
+
 import { RouterModule, Routes } from '@angular/router';
+
+@Component ({
+  selector: 'app-root',
+  template: `<h1> {{ (item | async)?.name }}</h1>`,
+})
 
 //const appRoutes: Routes = [
 //  { path: 'somePath', component: DashboardComponent },
@@ -29,13 +42,33 @@ import { RouterModule, Routes } from '@angular/router';
   imports: [
   //  RouterModule.forRoot(appRoutes),
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
   ],
-  providers: [TodoServiceService],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 
-export class AppModule { }
+export class AppModule {
+
+}
+
+
+
+
+  // item: Observable<any>;
+
+  // constructor(db: AngularFireDatabase) {
+    // this.item = db.object('item').valueChanges();
+  // }
+
+/*
+
+from lecture 6, screenshots @ about 1:06:00
+
+*/
 
 
 

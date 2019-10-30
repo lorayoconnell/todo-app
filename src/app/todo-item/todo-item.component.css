@@ -1,35 +1,28 @@
-.item {
+
+
+.fieldWrapper {
     display: flex;
+    position: relative;
+    width: 100%;
     justify-content: space-between;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin:0.5em 0;
-    padding-left: 0.3em;
-    background-color: #fff;
-    box-shadow: 0 0 2px 1px rgba(30,30,30,0.1);
+    margin-bottom: 0.35em;
 }
 
-.item > div {
+input {
     display: flex;
 }
 
-.menu {
+.btnField {
     display: flex;
-}
-
-.menu > button {
-    height: 100%;
-}
-
-.item.content {
-    display: flex;
-
+    margin-left: 0.5em;
+    min-width: 312px;
 }
 
 .removeBtn {
-    background-color: red;
+    background-color: #DB2828;
     color: #fff;
-    width:36px;
+    font-size: 2em;
+    width: 40px;
     border-radius: 4px;
+    margin-left: 0.5em;
 }

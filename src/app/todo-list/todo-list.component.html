@@ -1,9 +1,10 @@
 
-<div class="itemList">
+<h2>Todo Items</h2>
+
+<div class="ui list">
     <todoItem *ngFor="let item of todoItems" [todoItem]="item"></todoItem>
 </div>
 
-
-<!--
-    <todoItem *ngFor="let item of todoItems let i = index" [todoItem]="item"></todoItem>
--->
+<div class="btnContainer">
+<button class="negative ui button" (click)='deleteTodoItems()'>Delete All</button>
+</div>

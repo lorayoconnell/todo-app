@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoItem } from '../todo-item/todo-item.model';
-// import { TodoItemComponent } from '../todo-item/todo-item.component';
-import { TodoServiceService } from '../todo-service.service'; 
+import { TodoService } from '../todo.service'; 
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'todoList',
@@ -11,53 +10,30 @@ import { TodoServiceService } from '../todo-service.service';
 
 export class TodoListComponent implements OnInit {
 
-  //todoItem: TodoItemComponent;
+  todoItems: any;
 
-  // todoItem: TodoItem;
+  constructor(private todoService: TodoService) { }
 
-  todoItems: TodoItem[];
-
-  /*
-  constructor() {
-    this.todoItems = [
-      new TodoItem("Todo item #1", "Tomorrow"),
-      new TodoItem("Todo item #1", "The next day"),
-    ];
-  }
-  */
-
-  constructor(public todoService: TodoServiceService) {
-    // get list from service
-    this.todoItems =  this.todoService.todoItems;
-  }
-
-  //addItem(item: TodoItem) {
-  //  console.log("in todo-list.component.ts addItem");
-  // }
-
-  // getSize() {
-  //  console.log("todoItems.length: " + this.todoItems.length);
-  // }
-
-
-/*
-  addTodoItem(title: HTMLInputElement, duedate: HTMLInputElement): boolean {
-    console.log('Adding new todo-item: ${title.value} and duedate: ${duedate.value}');
-
-    this.todoItems.push(new TodoItem(title.value, duedate.value));
-    title.value = '';
-    duedate.value = '';
-    return false;
-  }
-*/
-  
   ngOnInit() {
-    //this.todoItems;
+    this.getTodoItemsList();
   }
-  
-  //testFunction() {
-  //  console.log("inside of todo-list.component.ts");
-  //}
 
+  getTodoItemsList() {
+    this.todoService.getItemsList().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c => ({ key: c.payload.key, ...c.payload.val() }) )
+      )
+    ).subscribe(todoItems => {
+      this.todoItems = todoItems;
+    });
+  }
+
+  deleteTodoItems() {
+    this.todoService.deleteAll().catch(err => console.log(err));
+  }
+
+  getSize() {
+    console.log("list size: " + this.todoService.todoItems.length);
+  }
 
 }

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoItem } from '../todo-item/todo-item.model';
-import { TodoListComponent } from '../todo-list/todo-list.component';
-import { TodoServiceService } from '../todo-service.service';
-// import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'newTodoItem',
@@ -12,30 +10,16 @@ import { TodoServiceService } from '../todo-service.service';
 
 export class NewTodoItemComponent implements OnInit {
 
-  // todoItem: TodoItem;
+  todoItem: TodoItem = new TodoItem();
+  dueDateChoice: string = "";
 
-  todoList: TodoListComponent;
-  todoItems: TodoItem[];
-
-  constructor(public todoService: TodoServiceService) { }
-  // constructor() { }
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() { }
 
-  addTodoItem(title: HTMLInputElement, duedate: HTMLInputElement): boolean {
-    // console.log('Adding new todo-item: ${title.value} and duedate: ${duedate.value}');
-
-
-    this.todoService.addItem(new TodoItem(title.value, duedate.value)); // push to service
-
-    // this.todoList.getSize();
-    // this.addItem(new TodoItem(title.value, duedate.value));
-    
-    // this.todoItems.push(new TodoItem(title.value, duedate.value));
-
-    title.value = '';
-    duedate.value = '';
-    return false;
+  save() {
+    this.todoService.createTodoItem(this.todoItem);
+    this.todoItem = new TodoItem();
   }
   
 }

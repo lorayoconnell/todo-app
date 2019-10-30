@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TodoItem } from './todo-item.model';
-// import { TodoServiceService } from '../todo-service.service';
+import { TodoService } from '../todo.service'
 
 @Component({
   selector: 'todoItem',
@@ -12,22 +12,36 @@ export class TodoItemComponent implements OnInit {
 
   @Input() todoItem: TodoItem;
 
-  // todoItems: TodoItem[];
+  constructor(private todoService: TodoService) { }
 
-  // constructor(private todoServiceService: TodoServiceService) { }
+  ngOnInit() { }
 
-  constructor() { }
-
-  ngOnInit() {
-  //  this.getItems();
+  updateItemDue(dueStr: string) {
+    switch(dueStr) {
+      case "urgent":
+        this.todoItem.urgent = true;
+        this.todoService.updateItem(this.todoItem.key, { urgent: true });
+        this.todoService.updateItem(this.todoItem.key, { weeks: false });
+        this.todoService.updateItem(this.todoItem.key, { days: false });
+        break;
+      case "days":
+        this.todoItem.days = true;
+        this.todoService.updateItem(this.todoItem.key, { days: true });
+        this.todoService.updateItem(this.todoItem.key, { weeks: false });
+        this.todoService.updateItem(this.todoItem.key, { urgent: false });
+        break;
+      case "weeks":
+        this.todoItem.weeks = true;
+        this.todoService.updateItem(this.todoItem.key, { weeks: true });
+        this.todoService.updateItem(this.todoItem.key, { days: false });
+        this.todoService.updateItem(this.todoItem.key, { urgent: false });
+        break;
+    }
+    this.todoService.updateItem(this.todoItem.key, { due: dueStr });
   }
 
   removeItem() {
-    console.log("remove item btn pressed");
+    this.todoService.deleteItem(this.todoItem.key).catch(err => console.log(err));
   }
-
-  // getItems(): void {
-  //  this.todoServiceService.getItems();  // .subscribe.... from heroes.component.ts
-  // }
 
 }
