@@ -1,12 +1,13 @@
 <div class="wrapper">
 
-<dashboard></dashboard>
-
-<button routerLink="list" class="ui button" routerLinkActive="active">Todo List</button>
-<button routerLink="add" class="ui button" routerLinkActive="active">Add Task</button>
+    <!--
+    <dashboard></dashboard>
+    -->
+    <div class="btn-wrapper">
+        <button routerLink="dashboard" routerLinkActive="active">Dashboard</button>
+        <button routerLink="list" routerLinkActive="active">Todo List</button>
+        <button routerLink="add" routerLinkActive="active">Add Task</button>
+    </div>
+    <router-outlet></router-outlet>
 
 </div>
-
-<!--
-<router-outlet></router-outlet>
--->

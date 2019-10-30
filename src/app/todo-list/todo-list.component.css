@@ -1,13 +1,35 @@
 h2 {
-    margin-top: 0.5em;
+    display: flex;
+    margin: 0.5em;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 0.5em;
+}
+
+.row-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+todoitem {
+    display: flex;
 }
 
 .btnContainer {
-    margin-bottom: 0.5em;
-    position: relative;
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 button {
-    position: absolute;
-    right: 0;
+    display: flex;
+    margin: 0;
+}
+
+.ui.button {
+    margin: 0;
 }

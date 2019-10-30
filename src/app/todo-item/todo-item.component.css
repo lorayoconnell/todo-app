@@ -1,4 +1,8 @@
 
+.ui.form {
+    display: flex;
+    width: 100%;
+}
 
 .fieldWrapper {
     display: flex;
@@ -15,14 +19,37 @@ input {
 .btnField {
     display: flex;
     margin-left: 0.5em;
-    min-width: 312px;
+    justify-content: space-between;
+}
+
+.ui.buttons {
+    display: flex;
 }
 
 .removeBtn {
+    min-height: 1em;
+    display: flex;
+    justify-content: center;
     background-color: #DB2828;
     color: #fff;
     font-size: 2em;
+    cursor: pointer;
+    margin: 0 0 0 6px;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    text-transform: none;
+    transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease;
+    -webkit-tap-highlight-color: transparent;
+    border-radius: .28571429rem;
+    font: inherit;
     width: 40px;
-    border-radius: 4px;
-    margin-left: 0.5em;
+    font-size: 2em;
+    padding:0;
+}
+
+@media screen and (max-width: 640px) {
+    .ui.button {
+        padding: 11px;
+    }
 }

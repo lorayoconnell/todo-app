@@ -1,7 +1,66 @@
 .wrapper {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    max-width: 960px;
-    margin: 1em auto;
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    border: none;
+    margin: 0 auto 1em;
+    padding-top: 0.5em;
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+}
+
+/* from semantic ui, but I wanted to override margin &  */
+button {
+    font-size: 1rem;
+    
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: 0;
+    border: none;
+    vertical-align: baseline;
+    background: #E0E1E2;
+    color: rgba(0,0,0,.6);
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    
+    padding: .78571429em 1.5em;
+    text-transform: none;
+    text-shadow: none;
+    font-weight: 700;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
+    user-select: none;
+    transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease;
+
+    margin: 0 1em;
+}
+
+button::selection {
+    background-color: #CCE2FF;
+    color: rgba(0,0,0,.87);
+}
+
+button:hover {
+    background-color: #C0C1C2;
+    background-image: none;
+    color: rgba(0,0,0,.95);
+}
+
+@media screen and (min-width: 960px) {
+    .wrapper {
+        margin: 0.5em auto 1em;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    
 }

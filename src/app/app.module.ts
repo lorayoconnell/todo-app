@@ -16,19 +16,11 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 
 import { Component } from '@angular/core';
-// import { Observable } from 'rxjs';
-
-import { RouterModule, Routes } from '@angular/router';
 
 @Component ({
   selector: 'app-root',
   template: `<h1> {{ (item | async)?.name }}</h1>`,
 })
-
-//const appRoutes: Routes = [
-//  { path: 'somePath', component: DashboardComponent },
-//  { path: '**', component: PageNotFoundComponent }
-//];
 
 @NgModule({
   declarations: [
@@ -40,7 +32,6 @@ import { RouterModule, Routes } from '@angular/router';
     PageNotFoundComponent
   ],
   imports: [
-  //  RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -51,27 +42,4 @@ import { RouterModule, Routes } from '@angular/router';
   bootstrap: [AppComponent]
 })
 
-export class AppModule {
-
-}
-
-
-
-
-  // item: Observable<any>;
-
-  // constructor(db: AngularFireDatabase) {
-    // this.item = db.object('item').valueChanges();
-  // }
-
-/*
-
-from lecture 6, screenshots @ about 1:06:00
-
-*/
-
-
-
-
-
-
+export class AppModule { }

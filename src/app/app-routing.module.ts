@@ -10,8 +10,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'add', component: NewTodoItemComponent },
   { path: 'list', component: TodoListComponent },
-
-  { path: '', redirectTo: 'list', pathMatch: 'full'}
+  { path: '', component: DashboardComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -19,12 +19,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
-
-/*
-
-which path should lead to the PageNotFoundComponent
-
-*/
-
