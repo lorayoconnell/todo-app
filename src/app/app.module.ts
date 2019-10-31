@@ -1,21 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { Component } from '@angular/core';
 import { AppComponent } from './app.component';
-import { TodoItemComponent } from './todo-item/todo-item.component';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { environment } from '../environments/environment';
+
+import { AppRoutingModule, appComponents } from './app-routing.module';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
+
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { NewTodoItemComponent } from './new-todo-item/new-todo-item.component';
 import { TodoService } from './todo.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { environment } from '../environments/environment';
-
-import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component ({
   selector: 'app-root',
@@ -25,21 +27,24 @@ import { Component } from '@angular/core';
 @NgModule({
   declarations: [
     AppComponent,
-    TodoItemComponent,
     DashboardComponent,
+    TodoItemComponent,
     TodoListComponent,
     NewTodoItemComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    appComponents
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
+    AngularFireDatabaseModule
   ],
   providers: [TodoService],
   bootstrap: [AppComponent]
 })
 
 export class AppModule { }
+
